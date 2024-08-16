@@ -1,13 +1,14 @@
-import path from 'path'
-import fs from 'fs'
-import { glob } from 'glob'
 import { src, dest, watch, series, parallel } from 'gulp'
+
 import * as dartSass from 'sass'
 import gulpSass from 'gulp-sass'
+const sass = gulpSass(dartSass)
+
+import { glob } from 'glob'
 import terser from 'gulp-terser'
 import sharp from 'sharp'
-
-const sass = gulpSass(dartSass)
+import path from 'path'
+import fs from 'fs'
 
 const paths = {
     scss: 'src/scss/**/*.scss',
